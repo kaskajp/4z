@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ASCII';
+    src: url('ASCII.woff2') format('woff2'),
+        url('ASCII.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
