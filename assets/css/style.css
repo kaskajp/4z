@@ -148,3 +148,29 @@ input {
   bottom: calc(var(--scene-margin) + var(--scene-padding));
   right: calc(var(--scene-margin) + var(--scene-padding) + var(--scene-border-size));
 }
+
+.image-small {
+  width: 100%;
+  max-width: 200px;
+  margin-right: 5px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.loader::after {
+  content: "•";
+  transform-origin: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
