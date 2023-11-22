@@ -5,7 +5,7 @@ import re
 header_path = '../src/includes/header.html'
 footer_path = '../src/includes/footer.html'
 views_dir = '../src/views/'
-destination_dir = '../dist/'
+destination_dir = '../docs/'
 
 # Read the content of the header and footer files with UTF-8 encoding
 with open(header_path, 'r', encoding='utf-8') as file:
