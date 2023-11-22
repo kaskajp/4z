@@ -1,0 +1,45 @@
+:root {
+    --bg: #1E1F22;
+    --text: #AFB0B0;
+    --text-reverse: #1E1F22;
+    --link: yellow;
+    --border: #AFB0B0;
+}
+
+body {
+    font-family: monospace, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+h1 {
+    font-size: 0.875rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+a:hover {
+    background-color: yellow;
+    color: var(--text-reverse);
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex--space-between { justify-content: space-between; }
+.flex--align-center { align-items: center; }
+.flex--gap-1rem { gap: 1rem; }
