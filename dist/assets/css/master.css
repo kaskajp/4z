@@ -1,6 +1,8 @@
 :root {
     --bg: #1E1F22;
+    --bg-light: #3a3c42;
     --text: #AFB0B0;
+    --text-dark: #848484;
     --text-reverse: #1E1F22;
     --link: yellow;
     --border: #AFB0B0;
@@ -53,5 +55,13 @@ hr {
     padding-left: 0;
     & time {
         margin-right: 1rem;
+        color: var(--text-dark);
     }
+    & li {
+      margin-bottom: 5px;
+    }
+}
+
+pre {
+    background-color: var(--bg-light);
 }
