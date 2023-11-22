@@ -21,6 +21,10 @@ h1 {
     font-size: 0.875rem;
 }
 
+p {
+
+}
+
 a {
     text-decoration: none;
     color: var(--link);
@@ -34,6 +38,7 @@ a:hover {
 hr {
     border: 0;
     border-bottom: 1px dashed var(--border);
+    margin: 1em 0 0 0;
 }
 
 .flex {
@@ -43,3 +48,10 @@ hr {
 .flex--space-between { justify-content: space-between; }
 .flex--align-center { align-items: center; }
 .flex--gap-1rem { gap: 1rem; }
+
+.posts {
+    padding-left: 0;
+    & time {
+        margin-right: 1rem;
+    }
+}
