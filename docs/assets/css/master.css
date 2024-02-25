@@ -1,30 +1,46 @@
 :root {
-    --bg: #1E1F22;
+    --bg: #191723;
     --bg-light: #3a3c42;
-    --text: #AFB0B0;
+    --text: #FFFFFF;
     --text-dark: #848484;
     --text-reverse: #1E1F22;
-    --link: yellow;
-    --border: #AFB0B0;
+    --link: #EDC382;
+    --link-hover: #232131;
+    --border: #FFFFFF;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: monospace, sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    font-size: 0.75rem;
+    font-size: 1.25rem;
     line-height: 1.5;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 15px;
 }
 
 h1 {
-    font-size: 0.875rem;
+    font-size: 2.5rem;
 }
 
 p {
+    margin: 1em 0;
+}
 
+.social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.social-icon path {
+    object-fit: contain;
 }
 
 a {
@@ -33,8 +49,7 @@ a {
 }
 
 a:hover {
-    background-color: yellow;
-    color: var(--text-reverse);
+    background-color: var(--link-hover);
 }
 
 hr {
@@ -43,22 +58,69 @@ hr {
     margin: 1em 0 0 0;
 }
 
-.flex {
+.projects {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+    margin-top: 1rem;
+    & h2 {
+        flex: 1 0 100%;
+    }
+    & .project {
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        margin-bottom: 5px;
+        padding: 1rem;
+        flex: 1 1 50%;
+        position: relative;
+        &.archived {
+            color: var(--text-dark);
+            border-color: var(--text-dark);
+        }
+        &.abandoned {
+            border-color: #E8885380;
+        }
+        &.developed {
+            border-color: #76BFA480;
+        }
+        & h3 {
+            margin-right: 150px;
+        }
+        & .meta {
+            display: flex;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            align-items: center;
+            gap: 1rem;
+            & a {
+                display: flex;
+            }
+        }
+        & svg, & path {
+            fill: var(--text-dark);
+            color: var(--text-dark);
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
 }
 
-.flex--space-between { justify-content: space-between; }
-.flex--align-center { align-items: center; }
-.flex--gap-1rem { gap: 1rem; }
-
-.posts {
-    padding-left: 0;
-    & time {
-        margin-right: 1rem;
-        color: var(--text-dark);
+.badge {
+    background-color: var(--bg-light);
+    border-radius: 5px;
+    color: var(--text-dark);
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    &.soon {
+        background-color: #76BFA4;
+        color: var(--text-reverse);
     }
-    & li {
-      margin-bottom: 5px;
+    &.abandoned {
+        background-color: #E88853;
+        color: var(--text-reverse);
     }
 }
 
