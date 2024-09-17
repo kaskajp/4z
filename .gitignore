@@ -1,2 +1,6 @@
 *.idea
 .DS_Store
+/node_modules
+/src/assets/images
+/www
+/_site
