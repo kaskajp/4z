@@ -1,2 +1,17 @@
-*.idea
+# Dependencies
+node_modules/
+
+# Build artifacts
+.eleventy.cache/
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
