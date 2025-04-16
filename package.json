@@ -1,0 +1,26 @@
+{
+  "name": "4z-site",
+  "version": "1.0.0",
+  "description": "A minimal static site with blog, projects, and changelog. AI generated.",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "build:prod": "ELEVENTY_ENV=production eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf docs"
+  },
+  "keywords": [
+    "11ty",
+    "blog",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "prismjs": "^1.29.0"
+  }
+}

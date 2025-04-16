@@ -1,0 +1,182 @@
+/**
+ * Custom PrismJS dark theme 
+ */
+
+:root {
+  --prism-background: #1e1e1e;
+  --prism-text: #e0e0e0;
+  --prism-comment: #6a9955;
+  --prism-punctuation: #d4d4d4;
+  --prism-keyword: #569cd6;
+  --prism-function: #dcdcaa;
+  --prism-string: #ce9178;
+  --prism-number: #b5cea8;
+  --prism-tag: #569cd6;
+  --prism-attr-name: #9cdcfe;
+  --prism-attr-value: #ce9178;
+  --prism-operator: #d4d4d4;
+  --prism-class-name: #4ec9b0;
+  --prism-builtin: #4ec9b0;
+  --prism-regex: #d16969;
+  --prism-selector: #d7ba7d;
+  --prism-inserted: #b5cea8;
+  --prism-deleted: #ce9178;
+  --prism-important: #569cd6;
+  --prism-line-highlight: rgba(255, 255, 255, 0.1);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--prism-text);
+  background: none;
+  font-family: 'SometypeMono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 4px;
+  background: var(--prism-background);
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em .3em;
+  border-radius: .3em;
+  background: var(--prism-background);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--prism-comment);
+}
+
+.token.punctuation {
+  color: var(--prism-punctuation);
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: var(--prism-number);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: var(--prism-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.variable,
+.token.inserted {
+  color: var(--prism-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--prism-keyword);
+}
+
+.token.function,
+.token.class-name {
+  color: var(--prism-function);
+}
+
+.token.regex,
+.token.important {
+  color: var(--prism-regex);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: var(--prism-deleted);
+}
+
+/* Line highlighting */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: var(--prism-line-highlight);
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+/* Filename display */
+.code-filename {
+  display: inline-block;
+  background-color: #2d2d2d;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0.3em 0.8em;
+  font-size: 0.8em;
+  color: #d4d4d4;
+  margin-bottom: -0.2em;
+}
+
+/* Copy button */
+.code-copy-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  color: var(--text-color);
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.code-copy-button:hover {
+  background: rgba(50, 50, 50, 0.8);
+}
+
+/* Make code blocks position relative so copy button can be positioned */
+pre[class*="language-"] {
+  position: relative;
+} 
