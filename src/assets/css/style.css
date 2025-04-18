@@ -198,7 +198,7 @@ pre:not([class*="language-"]) > code {
   color: var(--muted-color);
 }
 
-.status-completed {
+.status-completed, .status-actively-maintained {
   color: #4caf50;
 }
 
