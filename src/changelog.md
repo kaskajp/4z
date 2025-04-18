@@ -6,7 +6,7 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
-## 1.0.0 <span class="changelog-date">2023-07-01</span>
+## 1.0.0 <span class="changelog-date">2025-04-16</span>
 
 ### <span class="changelog-category added">Added</span>
 - **Initial Release**: Launched the site with basic structure and functionality

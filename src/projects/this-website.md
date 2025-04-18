@@ -5,8 +5,6 @@ repo: https://github.com/kaskajp/4z
 status: Completed
 ---
 
-# This Website
-
 This minimalist website was built as an experiment in AI-assisted development. Using [11ty](https://www.11ty.dev/) as the static site generator, the entire site was created through conversations with an AI assistant rather than by writing code directly.
 
 ## Features
