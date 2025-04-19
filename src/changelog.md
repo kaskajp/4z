@@ -6,6 +6,12 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 1.1.0 <span class="changelog-date">2025-04-19</span>
+
+### <span class="changelog-category added">Added</span>
+- **Open Graph Images**: Added open graph images to the site for social media sharing. The images are generated using puppeteer.
+- **Favicon**: Added a favicon to the site
+
 ## 1.0.0 <span class="changelog-date">2025-04-16</span>
 
 ### <span class="changelog-category added">Added</span>
