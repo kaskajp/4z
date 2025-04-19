@@ -9,6 +9,9 @@
     "serve": "eleventy --serve",
     "clean": "rm -rf docs",
     "generate-og": "node scripts/generate-og-images.js",
+    "generate-og:single": "node scripts/generate-og-image.js",
+    "generate-og:type": "node scripts/generate-og-by-type.js",
+    "generate-og:help": "node scripts/og-help.js",
     "build:with-og": "npm run generate-og && npm run build:prod"
   },
   "keywords": [
