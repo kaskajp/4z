@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it");
 const prism = require("prismjs");
+const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
   // Copy static assets directly to output folder
@@ -25,6 +26,12 @@ module.exports = function(eleventyConfig) {
   // Add a filter to strip date prefix from slugs
   eleventyConfig.addFilter("stripDatePrefix", function(slug) {
     return slug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+  });
+  
+  // Add a filter to generate OG image filename
+  eleventyConfig.addFilter("ogImagePath", function(title) {
+    const slug = slugify(title, { lower: true, strict: true });
+    return `/assets/images/og/${slug}.png`;
   });
   
   // Filter out draft posts in production
