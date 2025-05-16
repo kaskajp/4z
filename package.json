@@ -1,6 +1,6 @@
 {
   "name": "4z-site",
-  "version": "1.0.0",
+  "version": "1.20",
   "description": "A minimal static site with blog, projects, and changelog. AI generated.",
   "main": "index.js",
   "scripts": {

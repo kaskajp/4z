@@ -181,7 +181,21 @@ pre:not([class*="language-"]) > code {
   margin-bottom: 1rem;
 }
 
+.idea-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
 .project-repo, .project-demo, .project-status {
+  display: inline-block;
+  margin: 0;
+}
+
+.idea-status {
   display: inline-block;
   margin: 0;
 }
@@ -198,6 +212,10 @@ pre:not([class*="language-"]) > code {
   color: var(--muted-color);
 }
 
+.idea-status {
+  color: var(--muted-color);
+}
+
 .status-completed, .status-actively-maintained {
   color: #4caf50;
 }
@@ -210,7 +228,15 @@ pre:not([class*="language-"]) > code {
   color: #f44336;
 }
 
+.status-exploring, .status-initial, .status-loose {
+  color: #9D88D2;
+}
+
 .project-nav {
+  margin-top: 3rem;
+}
+
+.idea-nav {
   margin-top: 3rem;
 }
 
@@ -273,4 +299,9 @@ img {
 
 .security, .performance, .optimization {
   color: #9c27b0;
+}
+
+.idea-date {
+  color: var(--muted-color);
+  margin: 0;
 } 
