@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Ideas
+permalink: /ideas/
+---
+
+<ul class="post-list">
+{% set ideas = collections.ideas | reverse %}
+{% for idea in ideas %}
+  <li>
+    <span class="post-date">{{ idea.date | date }}</span>
+    <a href="{{ idea.url }}">{{ idea.data.title }}</a>
+  </li>
+{% endfor %}
+</ul> 
