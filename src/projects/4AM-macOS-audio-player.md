@@ -3,6 +3,7 @@ title: 4AM - macOS Audio Player
 description: A native macOS audio player built with Swift and SwiftUI
 repo: https://github.com/kaskajp/fourAM
 status: In Development
+date: 2025-04-17
 ---
 
 A native audio player for macOS built with Swift and SwiftUI. This project focuses on providing a clean, efficient audio experience with a simple interface. It's designed to work well with network mounted drives.

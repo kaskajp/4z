@@ -18,11 +18,22 @@ By day, I wrangle code and engineering teams as Head of Development at Mediaflow
 
 ## Projects
 
-{% set projects = collections.projects %}
+{% set projects = collections.projects | reverse %}
 {% for project in projects %}
 {% if loop.index <= 3 %}
 - [{{ project.data.title }}]({{ project.url }}){% if project.data.description %} - {{ project.data.description }}{% endif %}
 {% endif %}
 {% endfor %}
 
-[View all projects](/projects/) 
+[View all projects](/projects/)
+
+## Ideas
+
+{% set ideas = collections.ideas | reverse %}
+{% for idea in ideas %}
+{% if loop.index <= 3 %}
+- [{{ idea.data.title }}]({{ idea.url }}){% if idea.data.description %} - {{ idea.data.description }}{% endif %}
+{% endif %}
+{% endfor %}
+
+[View all ideas](/ideas/)

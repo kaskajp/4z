@@ -6,6 +6,12 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 1.3.0 <span class="changelog-date">2025-05-17</span>
+
+### <span class="changelog-category added">Added</span>
+- **Ideas Section**: Added an ideas section to showcase potential project ideas with status tracking on the index page.
+- **Projects Section**: Added a date to the projects.
+
 ## 1.2.0 <span class="changelog-date">2025-05-16</span>
 
 ### <span class="changelog-category added">Added</span>

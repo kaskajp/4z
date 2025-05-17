@@ -3,6 +3,7 @@ title: This Website
 description: A minimalist static site built with 11ty and AI assistance
 repo: https://github.com/kaskajp/4z
 status: Completed
+date: 2025-04-17
 ---
 
 This minimalist website was built as an experiment in AI-assisted development. Using [11ty](https://www.11ty.dev/) as the static site generator, the entire site was created through conversations with an AI assistant rather than by writing code directly.

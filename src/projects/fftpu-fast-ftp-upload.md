@@ -3,6 +3,7 @@ title: FFTPU - Fast FTP Upload for macOS
 description: A tool that allows you to quickly upload files to an FTP server and get back a URL to the file.
 repo: https://github.com/kaskajp/fftpu
 status: Actively Maintained
+date: 2025-04-18
 ---
 
 FFTPU is a macOS menu bar tool that allows you to quickly upload files to an FTP server and get back a URL to the file. It's a simple tool that uses `curl` to upload files to an FTP server. It's designed to be a quick and easy way to upload files to an FTP server without having to open a browser or other application.
