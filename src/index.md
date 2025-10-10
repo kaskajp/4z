@@ -1,39 +1,13 @@
 ---
 layout: base.njk
-title: Jonas Raneryd Imaizumi - That's me
+title: 4z
 ---
 
-By day, I wrangle code and engineering teams as Head of Development at Mediaflow. By night, I've fallen down a fascinating rabbit hole of AI-assisted programming that's completely transformed how I build software. This site is living proof—I "wrote" it by having conversations with an AI, not by typing a single line of code myself. Join me as I document this strange new world where the line between human and machine creativity blurs, and where a well-crafted prompt can accomplish in minutes what used to take days.
+<div class="home-list">
 
-## Latest Posts
+- [Matrix](https://github.com/kaskajp/matrix) - [Demo](https://jsbin.com/jewezad/edit?html,js,output)
+- [Monooki - Home Inventory Management System](https://github.com/kaskajp/monooki)
+- [4AM macOS Music Player](https://github.com/kaskajp/4am)
+- [FFTPU - FTP Upload Menu Bar Tool](https://github.com/kaskajp/fftpu)
 
-{% set posts = collections.posts | reverse %}
-{% for post in posts %}
-{% if loop.index <= 3 %}
-- [{{ post.data.title }}]({{ post.url }}) - {{ post.date | date }}
-{% endif %}
-{% endfor %}
-
-[View all posts](/posts/)
-
-## Projects
-
-{% set projects = collections.projects | reverse %}
-{% for project in projects %}
-{% if loop.index <= 3 %}
-- [{{ project.data.title }}]({{ project.url }}){% if project.data.description %} - {{ project.data.description }}{% endif %}
-{% endif %}
-{% endfor %}
-
-[View all projects](/projects/)
-
-## Ideas
-
-{% set ideas = collections.ideas | reverse %}
-{% for idea in ideas %}
-{% if loop.index <= 3 %}
-- [{{ idea.data.title }}]({{ idea.url }}){% if idea.data.description %} - {{ idea.data.description }}{% endif %}
-{% endif %}
-{% endfor %}
-
-[View all ideas](/ideas/)
+</div>

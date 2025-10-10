@@ -1,22 +1,7 @@
-/* Font declarations */
-@font-face {
-  font-family: 'SometypeMono';
-  src: url('/assets/fonts/SometypeMono-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SometypeMono';
-  src: url('/assets/fonts/SometypeMono-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
-}
-
 :root {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --link-color: #3498db;
+  --bg-color: #2E3440;
+  --text-color: #ECEEF4;
+  --link-color: #81A1C1;
   --border-color: #333;
   --muted-color: #777;
   --code-bg-color: #1e1e1e;
@@ -24,22 +9,21 @@
 }
 
 body {
-  font-family: 'SometypeMono', monospace;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.text-center {
+  text-align: center;
 }
 
 a {
   color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 nav {
@@ -55,253 +39,34 @@ main {
 }
 
 footer {
-  border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-  margin-top: 2rem;
+  font-size: .75rem;
+  line-height: 1.17;
 }
 
-/* Code styling for inline code that's not processed by Prism */
-:not(pre) > code:not([class*="language-"]) {
-  background-color: var(--code-bg-color);
-  border: 1px solid var(--code-border-color);
-  border-radius: 3px;
-  padding: 0.15em 0.4em;
-  font-size: 0.9em;
+.diam {
+  white-space: pre;
+  line-height: 1.17;
+  font-size: .75rem;
 }
 
-/* Basic styling for pre blocks without language specificity */
-pre:not([class*="language-"]) {
-  background-color: var(--code-bg-color);
-  border: 1px solid var(--code-border-color);
-  border-radius: 4px;
-  padding: 1em;
-  overflow-x: auto;
+.site-tagline {
+  font-size: .75rem;
 }
 
-pre:not([class*="language-"]) > code {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  font-size: 1em;
+.divider {
+  white-space: pre;
+  line-height: 1.17;
+  font-size: .75rem;
+  text-align: center;
+  margin: 40px 0;
 }
 
-/* Post styles */
-.post-date {
-  color: var(--muted-color);
-  margin-top: -1rem;
-}
-
-.post-nav {
-  margin-top: 3rem;
-}
-
-.post-list {
+.home-list ul {
   list-style: none;
   padding: 0;
-}
-
-.post-list li {
-  margin-bottom: 1rem;
-}
-
-.post-list .post-date {
-  display: inline-block;
-  width: 100px;
-  margin-top: 0;
-}
-
-/* Project styles */
-.project-list {
-  list-style: none;
-  padding: 0;
-}
-
-.project-list li {
-  margin-bottom: 1.5rem;
-}
-
-.project-list a {
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.project-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.project-header a {
-  width: 100%;
-}
-
-.status-indicator {
-  font-size: 0.7em;
-  padding: 0.2em 0.6em;
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-}
-
-/* Media query for larger screens */
-@media (min-width: 600px) {
-  .project-header a {
-    width: auto;
-  }
-  
-  .project-header {
-    flex-wrap: nowrap;
-  }
-}
-
-/* Adjustments for mobile view */
-@media (max-width: 600px) {
-  .project-header {
-    gap: 0.25rem;
-  }
-  
-  .status-indicator {
-    padding: 0.1em 0.3em;
-  }
-}
-
-.project-description {
-  margin-top: 0.25rem;
-  margin-bottom: 0;
-  color: var(--muted-color);
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: -0.5rem;
-  margin-bottom: 1rem;
-}
-
-.idea-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: -0.5rem;
-  margin-bottom: 1rem;
-}
-
-.project-repo, .project-demo, .project-status {
-  display: inline-block;
-  margin: 0;
-}
-
-.idea-status {
-  display: inline-block;
-  margin: 0;
-}
-
-/* On mobile, stack meta items */
-@media (max-width: 600px) {
-  .project-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-.project-status {
-  color: var(--muted-color);
-}
-
-.idea-status {
-  color: var(--muted-color);
-}
-
-.status-completed, .status-actively-maintained {
-  color: #4caf50;
-}
-
-.status-in-development, .status-in-progress {
-  color: #ff9800;
-}
-
-.status-on-hold {
-  color: #f44336;
-}
-
-.status-exploring, .status-initial, .status-loose {
-  color: #9D88D2;
-}
-
-.project-nav {
-  margin-top: 3rem;
-}
-
-.idea-nav {
-  margin-top: 3rem;
-}
-
-/* Ensure images don't overflow their containers */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin: 1rem 0;
-}
-
-/* Project screenshots specific styling */
-.screenshot {
-  margin: 1.5rem 0;
   text-align: center;
 }
 
-.screenshot figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9em;
-  color: var(--muted-color);
+.home-list li {
+  margin-bottom: 1rem;
 }
-
-.screenshot-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-/* Changelog styles */
-.changelog-date {
-  font-weight: bold;
-  color: var(--text-color);
-  margin-top: 2rem;
-}
-
-.changelog-category {
-  color: var(--link-color);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.changelog-item {
-  margin-bottom: 0.5rem;
-}
-
-/* Adding styling for the categories in the changelog */
-.added, .new, .feature {
-  color: #4caf50;
-}
-
-.changed, .updated, .improved {
-  color: #ff9800;
-}
-
-.fixed, .bugfix, .removed {
-  color: #f44336;
-}
-
-.security, .performance, .optimization {
-  color: #9c27b0;
-}
-
-.idea-date {
-  color: var(--muted-color);
-  margin: 0;
-} 

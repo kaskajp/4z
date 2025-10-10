@@ -6,26 +6,31 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
-## 1.3.0 <span class="changelog-date">2025-05-17</span>
+## 2.0.0 2025-10-10
 
-### <span class="changelog-category added">Added</span>
+### Changed
+- Factory reset.
+
+## 1.3.0 2025-05-17
+
+### Added
 - **Ideas Section**: Added an ideas section to showcase potential project ideas with status tracking on the index page.
 - **Projects Section**: Added a date to the projects.
 
-## 1.2.0 <span class="changelog-date">2025-05-16</span>
+## 1.2.0 2025-05-16
 
-### <span class="changelog-category added">Added</span>
+### Added
 - **Ideas Section**: Added a dedicated ideas section to showcase potential project ideas with status tracking.
 
-## 1.1.0 <span class="changelog-date">2025-04-19</span>
+## 1.1.0 2025-04-19
 
-### <span class="changelog-category added">Added</span>
+### Added
 - **Open Graph Images**: Added open graph images to the site for social media sharing. The images are generated using puppeteer.
 - **Favicon**: Added a favicon to the site
 
-## 1.0.0 <span class="changelog-date">2025-04-16</span>
+## 1.0.0 2025-04-16
 
-### <span class="changelog-category added">Added</span>
+### Added
 - **Initial Release**: Launched the site with basic structure and functionality
 - **Blog Section**: Created a blog with support for Markdown-formatted posts
 - **About Page**: Added an initial about page with personal information
