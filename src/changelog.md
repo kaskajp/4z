@@ -6,6 +6,11 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.1.0 2025-10-10
+
+### Changed
+- Dependencies updated.
+
 ## 2.0.0 2025-10-10
 
 ### Changed
