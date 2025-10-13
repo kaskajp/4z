@@ -1,6 +1,6 @@
 {
   "name": "4z-site",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Blurring the lines between human and machine creativity.",
   "main": "index.js",
   "scripts": {

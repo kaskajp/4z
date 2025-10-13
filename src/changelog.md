@@ -6,6 +6,16 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.2.0 2025-10-13
+
+### Added
+- **Furigana in HTML**: Added a page with examples of furigana in HTML.
+- Styling for code blocks.
+
+### Changed
+- Logo is now a link to the home page.
+- Centered the logo horizontally.
+
 ## 2.1.0 2025-10-10
 
 ### Changed

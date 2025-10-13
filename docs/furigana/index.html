@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furigana in HTML</title>
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="diam text-center">
+  ▄  ▗▖▄▄▄▄▄ 
+  █  ▐▌ ▄▄▄▀ 
+  ▀▀▀▜▌█▄▄▄▄ 
+     ▐▌      
+    </a>
+    <div class="text-center">
+      <em class="site-tagline">Blurring the lines between human and machine creativity.</em>
+    </div>
+  </header>
+
+  <div class="divider">░</div>
+  
+  <main>
+    <h2>What is furigana?</h2>
+<p>Furigana are small phonetic guides shown above (or beside) Japanese characters to indicate pronunciation. In HTML, furigana are implemented with the <code>ruby</code> family of elements.</p>
+<h2>The <code>ruby</code> elements</h2>
+<ul>
+<li><code>ruby</code>: wraps the base text and its annotation(s)</li>
+<li><code>rb</code>: optional wrapper around the base text (often omitted)</li>
+<li><code>rt</code>: the ruby text (the furigana pronunciation)</li>
+<li><code>rp</code>: fallback parentheses for browsers that don’t support ruby</li>
+<li><code>rtc</code>: advanced: container for complex annotations</li>
+</ul>
+<h2>Basic examples</h2>
+<p>Rendered:</p>
+<p>
+  <ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby>
+</p>
+<p>Code:</p>
+<pre><code class="language-html">&lt;ruby&gt;漢&lt;rt&gt;かん&lt;/rt&gt;字&lt;rt&gt;じ&lt;/rt&gt;&lt;/ruby&gt;
+</code></pre>
+<p>Using <code>rb</code> to group base text with a single annotation:</p>
+<p>Rendered:</p>
+<p>
+  <ruby><rb>今日</rb><rt>きょう</rt></ruby>
+</p>
+<p>Code:</p>
+<pre><code class="language-html">&lt;ruby&gt;
+  &lt;rb&gt;今日&lt;/rb&gt;
+  &lt;rt&gt;きょう&lt;/rt&gt;
+&lt;/ruby&gt;
+</code></pre>
+<p>With <code>rp</code> fallback for older browsers/screen readers that don’t support ruby:</p>
+<pre><code class="language-html">&lt;ruby&gt;
+  &lt;rb&gt;東京&lt;/rb&gt;
+  &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;とうきょう&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
+&lt;/ruby&gt;
+</code></pre>
+<h2>Accessibility notes</h2>
+<ul>
+<li>Keep the base text readable without ruby; use <code>rp</code> for graceful fallback.</li>
+<li>Consider setting <code>lang=&quot;ja&quot;</code> on a container so assistive tech applies Japanese rules:</li>
+</ul>
+<pre><code class="language-html">&lt;p lang=&quot;ja&quot;&gt;
+  &lt;ruby&gt;明日&lt;rt&gt;あした&lt;/rt&gt;&lt;/ruby&gt;は休みです。
+&lt;/p&gt;
+</code></pre>
+<ul>
+<li>Screen readers vary in ruby support. Where pronunciation is critical, consider providing a plain-text reading nearby.</li>
+</ul>
+<h2>Styling furigana with CSS</h2>
+<p>The default placement is usually above the base text in horizontal Japanese. You can control it with CSS:</p>
+<pre><code class="language-css">/* Place furigana above (horizontal text) or right (vertical text) */
+ruby { ruby-position: over; }
+
+/* Tweak spacing and alignment */
+ruby { ruby-align: center; }
+rt { font-size: 0.6em; letter-spacing: 0.05em; }
+</code></pre>
+<p>You generally don’t need extra markup beyond <code>ruby</code> and <code>rt</code> for simple cases. Use <code>rb</code> when grouping multiple characters that share one reading.</p>
+<h2>More examples</h2>
+<p>Mixed kanji and kana, multiple <code>rt</code> entries:</p>
+<p>Rendered:</p>
+<p>
+  <ruby>食<rt>しょく</rt>事<rt>じ</rt>中<rt>ちゅう</rt></ruby>
+</p>
+<p>Code:</p>
+<pre><code class="language-html">&lt;ruby&gt;
+  食&lt;rt&gt;しょく&lt;/rt&gt;事&lt;rt&gt;じ&lt;/rt&gt;中&lt;rt&gt;ちゅう&lt;/rt&gt;
+&lt;/ruby&gt;
+</code></pre>
+<h2>References</h2>
+<ul>
+<li>MDN: Ruby annotation — <code>https://developer.mozilla.org/docs/Web/HTML/Element/ruby</code></li>
+</ul>
+
+  </main>
+
+  <div class="divider">░</div>
+  
+  <footer class="text-center">
+    <a href="/changelog/">Changelog</a>
+  </footer>
+</body>
+</html> 

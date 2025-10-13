@@ -9,5 +9,6 @@ title: 4z
 - [Monooki - Home Inventory Management System](https://github.com/kaskajp/monooki)
 - [4AM macOS Music Player](https://github.com/kaskajp/4am)
 - [FFTPU - FTP Upload Menu Bar Tool](https://github.com/kaskajp/fftpu)
+- [Furigana in HTML](/furigana/)
 
 </div>
