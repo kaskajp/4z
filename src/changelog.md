@@ -6,6 +6,15 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.2.1 2025-11-26
+
+### Added
+- Added info about Debian mirror and mirror setup guide.
+- Added descriptions for links.
+
+### Changed
+- Links in the list now have a second line for description.
+
 ## 2.2.0 2025-10-13
 
 ### Added
