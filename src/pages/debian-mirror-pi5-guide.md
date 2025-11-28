@@ -1,3 +1,7 @@
+---
+title: Debian Mirror Setup Guide for Raspberry Pi 5
+---
+
 # Debian Mirror Setup Guide for Raspberry Pi 5
 
 A step-by-step guide for hosting a Debian mirror on a Raspberry Pi 5 with Caddy.
