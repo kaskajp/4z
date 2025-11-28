@@ -1,0 +1,135 @@
+<h1>Debian Mirror Setup Guide for Raspberry Pi 5</h1>
+<p>A step-by-step guide for hosting a Debian mirror on a Raspberry Pi 5 with Caddy.</p>
+<h2>Install required packages</h2>
+<pre><code>sudo apt update
+sudo apt install debmirror rsync gnupg
+</code></pre>
+<h2>Create mirror directory</h2>
+<pre><code>sudo mkdir -p /mnt/mirrors
+sudo chown -R $USER:$USER /mnt/mirrors
+</code></pre>
+<p>Replace <code>/mnt/mirrors</code> with the location you want to store the data in.</p>
+<h2>Import the Debian archive keys</h2>
+<p>These are needed to verify repository metadata.</p>
+<pre><code>sudo apt install debian-archive-keyring
+</code></pre>
+<p>debmirror uses GPG automatically from debian-archive-keyring.gpg.</p>
+<h2>Import the Debian archive keys for debmirror</h2>
+<pre><code>mkdir -p ~/.gnupg
+chmod 700 ~/.gnupg
+
+# Import all Debian archive keys into the trustedkeys.gpg that debmirror expects
+gpg --no-default-keyring \
+    --keyring ~/.gnupg/trustedkeys.gpg \
+    --import /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Optional: verify that keys are there
+gpg --no-default-keyring \
+    --keyring ~/.gnupg/trustedkeys.gpg \
+    --list-keys
+</code></pre>
+<p>That <code>debian-archive-keyring.gpg</code> file that we import is where Debian ships all the official archive keys.</p>
+<h2>Create your mirror script</h2>
+<p>Create the script:</p>
+<pre><code>vi ~/sync-debian.sh
+</code></pre>
+<p>Paste this (this mirrors stable + testing + unstable, amd64, no source):</p>
+<pre><code>#!/bin/bash
+
+BASE=&quot;/mnt/mirrors&quot;
+
+debmirror &quot;$BASE&quot; \
+  --host=ftp.se.debian.org \
+  --root=debian \
+  --method=rsync \
+  --dist=stable,stable-updates,testing,testing-updates,unstable \
+  --section=main,contrib,non-free-firmware \
+  --arch=amd64,arm64,armhf \
+  --rsync-extra=none,trace \
+  --getcontents \
+  --progress \
+  --retry=5 \
+  --ignore-small-errors \
+  --keyring /usr/share/keyrings/debian-archive-keyring.gpg
+</code></pre>
+<p>Replace <code>/mnt/mirrors</code> with your location and choose your architectures (<code>--arch</code>).</p>
+<p>Save, then:</p>
+<pre><code>chmod +x ~/sync-debian.sh
+</code></pre>
+<h3>Notes</h3>
+<ul>
+<li>rsync is preferred, mirrors faster and avoids HTTP issues.</li>
+<li>--ignore-small-errors is safe for home mirrors (Debian recommends it for partial mirrors).</li>
+</ul>
+<h2>Run the initial sync (this will take hours)</h2>
+<pre><code>./sync-debian.sh
+</code></pre>
+<p>You may see:</p>
+<ul>
+<li>“Ignoring missing Release file” → normal when syncing multiple dists.</li>
+<li>“Retry X/5” → debmirror being cautious.</li>
+<li><strong>Disk usage estimate</strong>: ~400–600 GB (inaccurate if the config is changed of course).</li>
+</ul>
+<h2>Add a systemd timer (instead of cron)</h2>
+<p>Create the service:</p>
+<pre><code>sudo vi /etc/systemd/system/debmirror.service
+</code></pre>
+<p>Paste:</p>
+<pre><code>[Unit]
+Description=Sync Debian Mirror
+Wants=debmirror.timer
+
+[Service]
+Type=oneshot
+User=YOURUSERNAME
+ExecStart=/home/YOURUSERNAME/sync-debian.sh
+</code></pre>
+<p>Replace YOURUSERNAME in both places.</p>
+<p>Create timer:</p>
+<pre><code>sudo vi /etc/systemd/system/debmirror.timer
+</code></pre>
+<p>Paste:</p>
+<pre><code>[Unit]
+Description=Daily Debian Mirror Sync
+
+[Timer]
+OnCalendar=03:30
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+</code></pre>
+<p>Enable + start:</p>
+<pre><code>sudo systemctl daemon-reload
+sudo systemctl enable --now debmirror.timer
+</code></pre>
+<p>Check:</p>
+<pre><code>systemctl list-timers | grep debmirror
+</code></pre>
+<h2>Configure Caddy to serve the mirror</h2>
+<pre><code>deb.example.com {
+    root * /mnt/mirrors
+    file_server browse
+}
+</code></pre>
+<p>Reload:</p>
+<pre><code>sudo systemctl reload caddy
+</code></pre>
+<p>Caddy will automatically issue/renew HTTPS certificates.</p>
+<h2>Test the mirror from a client machine</h2>
+<p>Edit <code>/etc/apt/sources.list</code> on a test Debian/Ubuntu machine:</p>
+<pre><code>deb https://deb.example.com stable main contrib non-free-firmware
+deb https://deb.example.com testing main contrib non-free-firmware
+deb https://deb.example.com unstable main contrib non-free-firmware
+</code></pre>
+<p>Then:</p>
+<pre><code>sudo apt update
+</code></pre>
+<p>If it works, you're done!</p>
+<h3>Optional: Also mirror security updates</h3>
+<p>If you want security repos too, replace --dist=... with:</p>
+<pre><code>--dist=stable,stable-security,testing,testing-security,unstable
+</code></pre>
+<p>This however, is not recommended by Debian.</p>
+<h2>Adding your mirror to the mirror list</h2>
+<p>The mirror list can be found here <a href="https://www.debian.org/mirror/ftpmirror">https://www.debian.org/mirror/ftpmirror</a>. In order to get listed here, there are some additional things you need to do, such as syncing 4 times every 24 hours. Refer to the information on the page.</p>

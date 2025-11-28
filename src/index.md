@@ -8,7 +8,7 @@ title: 4z
 - [Lerum Debian Mirror](https://mirrors.4z.nu/debian)
 Get your Debian updates from a local mirror from Lerum, Sweden.
 
-- [Debian Mirror Setup Guide for Raspberry Pi 5](/debian-mirror-pi5-guide/)
+- [Debian Mirror Setup Guide for Raspberry Pi 5](/pages/debian-mirror-pi5-guide/)
 A step-by-step guide for setting up your own Debian mirror on a Raspberry Pi 5.
 
 - [Matrix](https://github.com/kaskajp/matrix)
