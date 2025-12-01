@@ -11,6 +11,12 @@ Get your Debian updates from a local mirror from Lerum, Sweden.
 - [Debian Mirror Setup Guide for Raspberry Pi 5](/pages/debian-mirror-pi5-guide/)
 A step-by-step guide for setting up your own Debian mirror on a Raspberry Pi 5.
 
+- [VimWiki Autocomplete Links](/pages/vimwiki-autocomplete-links/)
+Autocomplete links by pressint Ctrl-Enter.
+
+- [Archive](https://archive.4z.nu)
+A curated effort to help with digital preservation.
+
 - [Matrix](https://github.com/kaskajp/matrix)
 Just needed a Matrix-style animation for a personal project. [Demo](https://jsbin.com/jewezad/edit?html,js,output)
 

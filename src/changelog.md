@@ -6,6 +6,11 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.3.0 2025-12-01
+
+### Added
+- Added a guide/snippet for a custom completion function for Vimwiki links.
+
 ## 2.2.1 2025-11-26
 
 ### Added

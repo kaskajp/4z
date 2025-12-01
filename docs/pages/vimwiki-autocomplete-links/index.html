@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VimWiki Autocomplete Links</title>
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="diam text-center">
+  ▄  ▗▖▄▄▄▄▄ 
+  █  ▐▌ ▄▄▄▀ 
+  ▀▀▀▜▌█▄▄▄▄ 
+     ▐▌      
+    </a>
+    <div class="text-center">
+      <em class="site-tagline">Blurring the lines between human and machine creativity.</em>
+    </div>
+  </header>
+
+  <div class="divider">░</div>
+  
+  <main>
+    <h1>VimWiki Autocomplete Links</h1>
+<p>This is a custom completion function for Vimwiki links. It allows you to autocomplete links by pressing Ctrl-Space.</p>
+<p>E.g. type <code>[[Debian</code> and press Ctrl-Space to open the autocomplete menu. Use arrow up/down to choose and press enter. Enter appends ]] to complete the link.</p>
+<p>Note: It does not fuzzy match, in my example above, it will match &quot;Debian Setup Guide&quot; but not &quot;My great Debian Setup Guide&quot;.</p>
+<pre><code class="language-vim">&quot; Autocomplete links in Vimwiki ([[go..)
+&quot; Press ctrl-space to open autocomplete menu, use arrow up/down
+&quot; to choose and press enter. Enter appends ]] to complete the link.
+augroup VimwikiLinkCompletion
+  autocmd!
+  &quot; Use our custom completion function in vimwiki buffers
+  autocmd FileType vimwiki setlocal completefunc=VimwikiLinkComplete
+
+  &quot; Popup menu behavior (optional but nice)
+  autocmd FileType vimwiki setlocal completeopt=menuone
+
+  &quot; Ctrl-Space triggers vimwiki completion
+  autocmd FileType vimwiki inoremap &lt;buffer&gt; &lt;C-Space&gt; &lt;C-x&gt;&lt;C-u&gt;
+
+  &quot; When popup is visible:
+  &quot;   &lt;CR&gt; = accept current item + append ]]
+  &quot; When popup is not visible:
+  &quot;   &lt;CR&gt; = normal newline
+  autocmd FileType vimwiki inoremap &lt;expr&gt;&lt;buffer&gt; &lt;CR&gt; pumvisible()
+        \ ? &quot;\&lt;C-y&gt;]]&quot;
+        \ : &quot;\&lt;CR&gt;&quot;
+augroup END
+
+&quot; When popup menu is visible, make &lt;Down&gt;/&lt;Up&gt; behave like &lt;C-n&gt;/&lt;C-p&gt;
+inoremap &lt;expr&gt; &lt;Down&gt; pumvisible() ? &quot;\&lt;C-n&gt;&quot; : &quot;\&lt;Down&gt;&quot;
+inoremap &lt;expr&gt; &lt;Up&gt;   pumvisible() ? &quot;\&lt;C-p&gt;&quot; : &quot;\&lt;Up&gt;&quot;
+</code></pre>
+
+  </main>
+
+  <div class="divider">░</div>
+  
+  <footer class="text-center">
+    <a href="/changelog/">Changelog</a>
+  </footer>
+</body>
+</html> 
