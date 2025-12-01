@@ -26,8 +26,50 @@
     <h1>VimWiki Autocomplete Links</h1>
 <p>This is a custom completion function for Vimwiki links. It allows you to autocomplete links by pressing Ctrl-Space.</p>
 <p>E.g. type <code>[[Debian</code> and press Ctrl-Space to open the autocomplete menu. Use arrow up/down to choose and press enter. Enter appends ]] to complete the link.</p>
-<p>Note: It does not fuzzy match, in my example above, it will match &quot;Debian Setup Guide&quot; but not &quot;My great Debian Setup Guide&quot;.</p>
-<pre><code class="language-vim">&quot; Autocomplete links in Vimwiki ([[go..)
+<p>Note: It does not fuzzy match, in my example above, it will match &quot;Debian Setup Guide&quot; but not &quot;My great Debian Setup Guide&quot;. Also replace <code>~/yourwiki/</code> with the path to your wiki.</p>
+<p>Add this to your <code>.vimrc</code> file:</p>
+<pre><code class="language-vim">function! VimwikiLinkComplete(findstart, base) abort
+  &quot; 1) Find where completion starts
+  if a:findstart
+    let line = getline('.')
+    let col = col('.') - 1
+
+    &quot; Walk backwards to find [[
+    while col &gt; 1
+      if line[col - 1] == '[' &amp;&amp; line[col - 2] == '['
+        &quot; Completion starts right after [[
+        return col
+      endif
+      let col -= 1
+    endwhile
+
+    return -1
+  endif
+
+  &quot; 2) Build completion list
+  let base = a:base
+  let wiki = get(g:vimwiki_list, 0, {})
+  let root = expand(get(wiki, 'path', '~/yourwiki/'))
+  let ext  = get(wiki, 'ext', '.md')
+
+  &quot; Find all wiki files
+  let files = split(globpath(root, '**/*' . ext), '\n')
+  let res = []
+
+  for f in files
+    &quot; Use filename without extension, e.g. note.md -&gt; note
+    let name = fnamemodify(f, ':t:r')
+
+    &quot; Only include names that start with what you've typed
+    if name =~? '^' . escape(base, '.*$^~\')
+      call add(res, name)
+    endif
+  endfor
+
+  return res
+endfunction
+
+&quot; Autocomplete links in Vimwiki ([[go..)
 &quot; Press ctrl-space to open autocomplete menu, use arrow up/down
 &quot; to choose and press enter. Enter appends ]] to complete the link.
 augroup VimwikiLinkCompletion
