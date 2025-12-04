@@ -6,6 +6,14 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.3.1 2025-12-04
+
+### Added
+- Added a link to the VimWiki Autocomplete Links plugin.
+
+### Changed
+- Added a note about the early version of the VimWiki Autocomplete Links plugin.
+
 ## 2.3.0 2025-12-01
 
 ### Added

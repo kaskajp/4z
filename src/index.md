@@ -5,6 +5,9 @@ title: 4z
 
 <div class="home-list">
 
+- [VimWiki Autocomplete Links](https://github.com/kaskajp/vimwiki-autocomplete-links)
+Autocomplete `[[links]]` to other notes in your VimWiki.
+
 - [Lerum Debian Mirror](https://mirrors.4z.nu/debian)
 Get your Debian updates from a local mirror from Lerum, Sweden.
 

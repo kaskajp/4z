@@ -4,6 +4,8 @@ title: VimWiki Autocomplete Links
 
 # VimWiki Autocomplete Links
 
+**UPDATE December 4, 2025**: This is just an early version of a plugin. See [VimWiki Autocomplete Links](https://github.com/kaskajp/vimwiki-autocomplete-links) for the latest version.
+
 This is a custom completion function for Vimwiki links. It allows you to autocomplete links by pressing Ctrl-Space.
 
 E.g. type `[[Debian` and press Ctrl-Space to open the autocomplete menu. Use arrow up/down to choose and press enter. Enter appends ]] to complete the link.
