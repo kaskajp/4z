@@ -6,6 +6,11 @@ permalink: /changelog/
 
 A chronological record of notable changes, improvements, and additions to this website.
 
+## 2.3.2 2026-03-11
+
+### Added
+- Added links to filmarkivet-dl and svtplay-auto-dl.
+
 ## 2.3.1 2025-12-04
 
 ### Added

@@ -5,6 +5,12 @@ title: 4z
 
 <div class="home-list">
 
+- [filmarkivet-dl](https://git.4z.nu/jonas/filmarkivet-dl)
+Downloads all videos from a given category page on filmarkivet.se using svtplay-dl.
+
+- [svtplay-auto-dl](https://git.4z.nu/jonas/svtplay-auto-dl)
+Batch-downloads videos from SVT Play categories, with series/episode support and Jellyfin-compatible output.
+
 - [VimWiki Autocomplete Links](https://github.com/kaskajp/vimwiki-autocomplete-links)
 Autocomplete `[[links]]` to other notes in your VimWiki.
 
